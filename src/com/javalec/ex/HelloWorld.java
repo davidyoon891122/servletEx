@@ -1,6 +1,8 @@
 package com.javalec.ex;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +30,23 @@ public class HelloWorld extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		System.out.print("Hello World");
+		//System.out.print("Hello World");
+		response.setContentType("text/html;charset=euc-kr");
+		PrintWriter writer = response.getWriter();
+		writer.println("<html>");
+		writer.println("<head>");
+		writer.println("Hello WebProgramming");
+		writer.println("</head>");
+		writer.println("<body>");
+		writer.println("This is the new World!");
+		writer.println("</body>");
+		writer.println("</html>");
+		
+		
+		
+		
+		
+		
 	}
 
 	/**
