@@ -10,16 +10,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class HelloWorld
+ * Servlet implementation class PostMethod
  */
-@WebServlet("/HWorld")
-public class HelloWorld extends HttpServlet {
+@WebServlet("/PostMethod")
+public class PostMethod extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public HelloWorld() {
+    public PostMethod() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,21 +30,6 @@ public class HelloWorld extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		//System.out.print("Hello World");
-		response.setContentType("text/html;charset=euc-kr");
-		PrintWriter writer = response.getWriter();
-		writer.println("<html>");
-		writer.println("<head>");
-		writer.println("Hello WebProgramming");
-		writer.println("</head>");
-		writer.println("<body>");
-		writer.println("This is the new World!");
-		writer.println("</body>");
-		writer.println("</html>");
-		
-		
-		writer.close();
-		
 	}
 
 	/**
@@ -53,7 +38,20 @@ public class HelloWorld extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		System.out.println("Call doPost()");
+		response.setContentType("text/html;charset=euc-kr");
+		PrintWriter writer = response.getWriter();
+		writer.println("<html>");
+		writer.println("<head>");
+		writer.println("DoPost");
+		writer.println("</head>");
+		writer.println("<hr>");
+		writer.println("<body>");
+		writer.println("This is a DoPost example!");
+		writer.println("</body>");
+		writer.println("</html>");
 		
+		writer.close();
 	}
 
 }
